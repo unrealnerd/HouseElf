@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "houseelf",
+    "description": "This extension helps automate tasks web pages",
+    "version": "1",
+    "author": "bitsmonkey",
+    "background": {
+        "scripts": ["background.js", "jquery.min.js"],
+        "persistent": false
+    },
+    "permissions": ["declarativeContent", "activeTab", "tabs"],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/elf-hat-16.png",
+            "32": "images/elf-hat-32.png",
+            "64": "images/elf-hat-64.png",
+            "128": "images/elf-hat-128.png"
+        }
+    },
+    "content_scripts": [{
+        "matches":["*://*/"],
+        "js": [
+            "jquery.min.js",
+            "scripts/search_google.js"
+        ]
+    }],
+    "icons": {
+        "16": "images/elf-hat-16.png",
+        "32": "images/elf-hat-32.png",
+        "64": "images/elf-hat-64.png",
+        "128": "images/elf-hat-128.png"
+    }
+}
