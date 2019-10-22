@@ -8,27 +8,28 @@
         "scripts": ["background.js", "jquery.min.js"],
         "persistent": false
     },
-    "permissions": ["declarativeContent", "activeTab", "tabs"],
-    "browser_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "images/elf-hat-16.png",
-            "32": "images/elf-hat-32.png",
-            "64": "images/elf-hat-64.png",
-            "128": "images/elf-hat-128.png"
-        }
-    },
-    "content_scripts": [{
-        "matches":["*://*/"],
-        "js": [
-            "jquery.min.js",
-            "scripts/search_google.js"
-        ]
-    }],
     "icons": {
         "16": "images/elf-hat-16.png",
         "32": "images/elf-hat-32.png",
         "64": "images/elf-hat-64.png",
         "128": "images/elf-hat-128.png"
+    },
+    "permissions": ["declarativeContent", "activeTab", "tabs", "<all_urls>"],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": [
+            "jquery.min.js",
+            "scripts/search_duckduckgo.js",
+            "scripts/change_bg_color.js"
+        ]
+    }],
+    "browser_action": {
+        "default_icon": {
+            "16": "images/elf-hat-16.png",
+            "32": "images/elf-hat-32.png",
+            "64": "images/elf-hat-64.png",
+            "128": "images/elf-hat-128.png"
+        },
+        "default_popup": "popup.html"
     }
 }

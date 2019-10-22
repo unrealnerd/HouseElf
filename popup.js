@@ -1,11 +1,14 @@
-let runScript = document.getElementById('runScript');
+function click(e) {
+  chrome.tabs.executeScript(null,
+    { code: `${e.target.getAttribute("data-script-name")}()` }
+    // { file: "scripts/" + e.target.getAttribute("data-script-name") + ".js'" }
+  );
+  window.close();
+}
 
-runScript.onclick = function (element) {
-  let scriptName = element.target.value;
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.executeScript(
-      tabs[0].id,
-      { file: `scripts/${scriptName}.js` });
-  });
-  console.log('runscript clicked!');
-};
+document.addEventListener('DOMContentLoaded', function () {
+  var scripts = document.querySelectorAll('.scriptsList li');
+  for (var i = 0; i < scripts.length; i++) {
+    scripts[i].addEventListener('click', click);
+  }
+});

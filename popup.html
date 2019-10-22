@@ -1,16 +1,22 @@
  <!DOCTYPE html>
-  <html>
-    <head>
-      <style>
-        button {
-          height: 30px;
-          width: 30px;
-          outline: none;
-        }
-      </style>
-    </head>
-    <body>
-      <button id="runScript" value="search_duckduckgo"></button>
-      <script src="popup.js"></script>
-    </body>
-  </html>
+ <html>
+
+ <head>
+   <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
+ </head>
+
+ <body style="min-width:400px">
+   <div class="">
+     <ul class="scriptsList list-group">
+       <li class="list-group-item list-group-item-action" data-script-name="search_duckduckgo">Search DuckDuckGo</li>
+       <li class="list-group-item list-group-item-action" data-script-name="change_bg_color" id="blue">Change background
+         color</li>
+       <li class="list-group-item list-group-item-action" data-script-name="search_selection_in_duckduckgo">search_selection_in_duckduckgo</li>
+     </ul>
+   </div>
+
+   <script type="text/javascript" src="jquery.min.js"></script>
+   <script src="popup.js"></script>
+ </body>
+
+ </html>
