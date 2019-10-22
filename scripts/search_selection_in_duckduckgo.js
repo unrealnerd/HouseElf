@@ -1,3 +1,3 @@
 function search_selection_in_duckduckgo(){
-    window.location = "https://google.com?q=" + window.getSelection().toString();
+    window.location = "https://duckduckgo.com?q=" + window.getSelection().toString();
 }

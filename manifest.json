@@ -20,7 +20,9 @@
         "js": [
             "jquery.min.js",
             "scripts/search_duckduckgo.js",
-            "scripts/change_bg_color.js"
+            "scripts/change_bg_color.js",
+            "scripts/search_selection_in_duckduckgo.js",
+            "scripts/dd_ux_populate_filter.js"
         ]
     }],
     "browser_action": {
