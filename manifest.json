@@ -14,7 +14,7 @@
         "64": "images/elf-hat-64.png",
         "128": "images/elf-hat-128.png"
     },
-    "permissions": ["declarativeContent", "activeTab", "tabs", "<all_urls>"],
+    "permissions": ["declarativeContent", "activeTab", "tabs", "<all_urls>", "https://*/"],
     "content_scripts": [{
         "matches": ["<all_urls>"],
         "js": [
@@ -22,7 +22,17 @@
             "scripts/search_duckduckgo.js",
             "scripts/change_bg_color.js",
             "scripts/search_selection_in_duckduckgo.js",
-            "scripts/dd_ux_populate_filter.js"
+            "scripts/dd_ux_populate_filter.js",
+            "scripts/define_selection_in_duckduckgo.js",
+            "scripts/send_feedback.js",
+            "scripts/chat_with_elf.js"
+        ],
+        "web_accessible_resources": [
+            "template.html"
+        ],
+        "css": [
+            "bootstrap.min.css",
+            "main.css"
         ]
     }],
     "browser_action": {
